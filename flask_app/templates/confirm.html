@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pizza Time</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/magnific-popup.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/aos.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/ionicons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/flaticon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/icomoon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light ftco-navbar-light-2" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pizza Time</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item "><a href="/dashboard" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="/order" class="nav-link">Order</a></li>
+                    <li class="nav-item "><a href="/account" class="nav-link">Account</a></li>
+                    <li class="nav-item"><a href="/out" class="nav-link">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+        <div class="container">
+            <div class="row no-gutters d-flex">
+                <div class="col-sm-5 img img-2  align-items-center justify-content-center justify-content-md-end">
+                    <div class="text mt-md-5">
+                        <h1 class="mb-4">Your Order</h1>
+
+                        <div class="ftco-animate makereservation">
+                            <div class="">
+                                <div class="menus d-flex ftco-animate">
+
+                                    <div class="menu-img img" style="background-image: url(static/images/bg_3t8.jpg);">
+                                    </div>
+                                    <div class="text">
+                                        <div class="d-flex">
+                                            <div class="one-half">
+                                                <h3>Method: {{lastOrder[0]['method']}}</h3>
+                                                <h3>Quantity: {{lastOrder[0]['quantity']}}</h3>
+                                                <h3>Size: {{lastOrder[0]['size']}}</h3>
+                                                <h3>Crust: {{lastOrder[0]['crust']}}</h3>
+                                            </div>
+                                            <div class="one-forth">
+                                                <span class="price">$ {{lastOrder[0]['price']}}</span>
+                                            </div>
+                                        </div>
+                                        <p><span>Toppings: </span></p>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3 d-flex">
+
+                                        <div class="col-md-12 mt-3">
+                                            <div class="form-group">
+                                                <a href="/deleteOrder">
+                                                    <input type="submit" value="Start Over"
+                                                        class="btn btn-primary py-3 px-5">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-3">
+                                            <div class="form-group">
+                                                <a href="/purchase">
+                                                    <input type="submit" value="Purchase" class="btn btn-success py-3 px-5">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery-migrate-3.0.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.stellar.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/aos.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.animateNumber.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.timepicker.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/scrollax.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/google-map.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
+
+</body>
+
+</html>
